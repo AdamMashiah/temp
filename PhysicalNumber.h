@@ -13,18 +13,17 @@ namespace ariel
 		double num;
 		ariel::Unit unit;
 		PhysicalNumber(double number, Unit u);
-		
-		
+		PhysicalNumber(const PhysicalNumber &a);
         PhysicalNumber operator+(const PhysicalNumber &a) const;
 	    PhysicalNumber operator+() const;
         PhysicalNumber operator-(const PhysicalNumber &a) const;
-        PhysicalNumber operator-() const;
-        PhysicalNumber operator--(int a) const;
-	    PhysicalNumber operator--() const;
-        PhysicalNumber operator++(int a) const;
-        PhysicalNumber operator++() const;
-		PhysicalNumber operator+=(const PhysicalNumber &a) const;
-        PhysicalNumber operator-=(const PhysicalNumber &a) const;
+        PhysicalNumber operator-();
+        PhysicalNumber operator--(int a);
+	    PhysicalNumber operator--() ;
+        PhysicalNumber operator++(int a) ;
+        PhysicalNumber& operator++() ;
+		PhysicalNumber operator+=(const PhysicalNumber &a) ;
+        PhysicalNumber operator-=(const PhysicalNumber &a) ;
 
 		bool operator<(const PhysicalNumber &a);
 		bool operator>(const PhysicalNumber &a);
@@ -35,6 +34,8 @@ namespace ariel
 
 		friend ostream& operator<<(ostream& o, const PhysicalNumber& a);
 		friend istream& operator>>(istream& i, PhysicalNumber& a);
+
+		double trans(const PhysicalNumber &a,const PhysicalNumber &b)const;
 	};
 	
 
